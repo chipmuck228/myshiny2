@@ -1,0 +1,16 @@
+{
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nshinyUI(fluidPage(\n\n  # Application title\n  titlePanel(h4(\"CCTV App Perf. Index Visualization\")),\n  \n\n  # Sidebar with a slider input for number of bins\n  sidebarLayout(\n    sidebarPanel(\n      #selectInput(\"applications\",\"Choose an application\", choice=c(\"BBoardBridge\",\"ConvertBridge\",\"DataSouInterface\",\"DataSourceApp\",\"FourBridge\",\"MigScheduler\",\"NewsFiveBridge\",\"NormalBridge\")),\n      selectInput(\"index\", \"Choose an index\", choice=c(\"cpu usage\",\"db time\",\"sql hard parse\",\"sql parse\",\"user call\",\"redo\",\"phyical read\",\"sql executions\"))\n#    selectInput(\"dataset\", \"Choose a dataset\", choice = c(\"Select dataset\",\"DataSourceApp\", \"BBoardBridge\", \"NewsFiveBridge\", \"Connections all\")),\n#      dateInput(\"dates\", label = h5(\"Date input\"), value=\"2015-03-10\"),\n#      checkboxGroupInput(\"Index Group\", \n#                        label = h5(\"Index group\"), \n#                         choices = list(\"连接数\" = 1, \n#                                        \"硬解析数\" = 2, \"解析数\" = 3, \"CPU使用率\" = 4,\n#                                        \"DB TIME\" = 5, \"用户调用数\" = 6, \"SQL执行次数\" = 7),\n#                         selected = 1)\n    \n    ),\n\n    # Show a plot of the generated distribution\n    mainPanel(\n      verbatimTextOutput(\"Outlier.DataSourceApp\"),\n      verbatimTextOutput(\"Outlier.DataSouInterface\"),\n      verbatimTextOutput(\"Outlier.BBoardBridge\"),\n      \n      #img(src=\"Oracle1.png\", height = 400, width = 400),\n      plotOutput(\"indexplot\")\n    )\n  )\n))\n",
+    "created" : 1431923467477.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1396718188",
+    "id" : "F7C03071",
+    "lastKnownWriteTime" : 1432524332,
+    "path" : "D:/Bigdata/R/myshiny2/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

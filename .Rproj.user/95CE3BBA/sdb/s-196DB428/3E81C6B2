@@ -1,0 +1,17 @@
+{
+    "contents" : "function(filename){\n\nsheetindex = 1\ndata.result <- data.frame()\ndata.temp <- data.frame()\n\nappname <- c(\"BBoardBridge\",\"ConvertBridge\",\"DataSouInterface\",\"DataSourceApp\",\"FourBridge\",\"MigScheduler\",\"NewsFiveBridge\",\"NormalBridge\")\nfor(sheetindex in 1:length(appname))\n{\ndata.temp <- read.xlsx(filename, sheetIndex=sheetindex)\ndata.temp$APP_NAME = appname[sheetindex]\ndata.temp$DATE = format(data.temp$SNAP_TIME, \"%y-%m-%d\")\ndata.temp$TIME = format(data.temp$SNAP_TIME, \"%H:%M:%S\")\ndata.result <- rbind(data.result, data.temp)\ntail(data.result)\n}\nreturn(data.result)\n}",
+    "created" : 1432628359706.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1340348104",
+    "id" : "3E81C6B2",
+    "lastKnownWriteTime" : 1432635331,
+    "path" : "D:/Bigdata/R/myshiny2/dataprune.R",
+    "project_path" : "dataprune.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
